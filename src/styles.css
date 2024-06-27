@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+	--world-ocean-color: #006;
+	--world-land-color: #060;
+	--world-highlight-color: #252;
+	--dark-ocean-color: #000;
+	--dark-land-color: #900;
+	--dark-highlight-color: #700;
+}
+
+* {
+  font-family:'Courier New', Courier, monospace;
+  top: 0;
+}
+
+body {
+  background-color: var(--dark-ocean-color);
+  margin: 0;
+  min-height: 100vh;
+}
