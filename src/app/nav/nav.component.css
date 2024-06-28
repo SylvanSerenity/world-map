@@ -1,0 +1,30 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+
+  width: 100%;
+  height: 100%;
+  font-size: small;
+
+  background-color: var(--dark-nav-color);
+  color: var(--dark-highlight-color);
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.nav-item {
+  max-height: 100%;
+  width: 25%;
+}
+
+.nav-item li {
+  list-style: none;
+  padding: 0 5px;
+}
+
+.nav-item li:nth-of-type(2) {
+  font-size: x-small;
+}

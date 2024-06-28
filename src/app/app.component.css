@@ -1,6 +1,14 @@
+app-nav {
+  position: fixed;
+  width: 100%;
+  height: var(--nav-height);
+}
+
 .content {
+  position: relative;
+  top: var(--nav-height);
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - var(--nav-height));
 }
 
 .content * {

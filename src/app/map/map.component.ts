@@ -1,6 +1,9 @@
 import { AfterViewInit, Component } from '@angular/core';
 
 import jQuery from 'jquery';
+import { CountryService } from '../country.service';
+
+export var Country:any;
 
 @Component({
   selector: 'app-map',
@@ -10,7 +13,7 @@ import jQuery from 'jquery';
   styleUrl: './map.component.css'
 })
 export class MapComponent implements AfterViewInit {
-  constructor() {}
+  constructor(private _countryService: CountryService) {}
 
   ngAfterViewInit(): void {
     const paths = jQuery('path');
@@ -24,6 +27,12 @@ export class MapComponent implements AfterViewInit {
       // Move to the end of the SVG to bring the country to the front
       // (Prevents land-locked countries' stroke from being hidden under bordering countries' stroke)
       target.appendTo(target.parent());
+
+      // Set new country data
+      this._countryService.country = {
+	code: target.attr('id')?.toUpperCase() ?? 'UN',
+	name: target.attr('name') ?? 'Unknown'
+      };
     });
 
     paths.on('mouseleave', (event) => {
