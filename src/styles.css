@@ -1,11 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-	--world-ocean-color: #006;
-	--world-land-color: #060;
-	--world-highlight-color: #252;
-	--dark-ocean-color: #000;
-	--dark-land-color: #900;
-	--dark-highlight-color: #700;
+  --world-ocean-color: #006;
+  --world-land-color: #060;
+  --world-border-color: #252;
+  --world-border-highlight-color: #252;
+  --world-highlight-color: #272;
+  --dark-ocean-color: #000;
+  --dark-land-color: #900;
+  --dark-border-color: #700;
+  --dark-border-highlight-color: white;
+  --dark-highlight-color: #b00;
 }
 
 * {

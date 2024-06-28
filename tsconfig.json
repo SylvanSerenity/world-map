@@ -23,7 +23,8 @@
       "ES2022",
       "dom"
     ],
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "types": ["jquery"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
