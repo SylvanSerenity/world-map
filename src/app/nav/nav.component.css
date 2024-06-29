@@ -14,8 +14,9 @@
   height: 100%;
   font-size: 1rem;
 
-  background-color: var(--dark-nav-color);
-  color: var(--dark-highlight-color);
+  background-color: var(--nav-color);
+  border-bottom: 1px solid black;
+  color: var(--highlight-color);
 
   -webkit-user-select: none;
   user-select: none;
@@ -35,11 +36,15 @@
   font-size: 0.5rem;
 }
 
-.navbar a {
-  text-decoration: none;
-  color: var(--dark-highlight-color);
+#toggle-theme {
+  background-color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: inherit;
+  cursor: pointer;
 }
 
-.navbar a:hover {
-  color: var(--dark-border-highlight-color);
+#toggle-theme:hover {
+  color: var(--border-highlight-color);
 }

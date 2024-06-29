@@ -1,20 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
 :root {
   --nav-height: 10vh;
 
-  --bright-nav-color: #28f;
-  --world-ocean-color: #006;
-  --world-land-color: #060;
-  --world-border-color: #252;
-  --world-border-highlight-color: #252;
-  --world-highlight-color: #272;
+  --nav-color: #322;
+  --ocean-color: #000;
+  --land-color: #900;
+  --border-color: #700;
+  --border-highlight-color: white;
+  --highlight-color: #b00;
+}
 
-  --dark-nav-color: #322;
-  --dark-ocean-color: #000;
-  --dark-land-color: #900;
-  --dark-border-color: #700;
-  --dark-border-highlight-color: white;
-  --dark-highlight-color: #b00;
+.theme-dark {
+  --nav-color: #322;
+  --ocean-color: #000;
+  --land-color: #900;
+  --border-color: #700;
+  --border-highlight-color: white;
+  --highlight-color: #b00;
+}
+
+.theme-light {
+  --nav-color: #226;
+  --ocean-color: #006;
+  --land-color: #060;
+  --border-color: #252;
+  --border-highlight-color: white;
+  --highlight-color: #272;
 }
 
 * {
@@ -24,6 +34,6 @@
 }
 
 body {
-  background-color: var(--dark-ocean-color);
+  background-color: var(--ocean-color);
   min-height: 100vh;
 }

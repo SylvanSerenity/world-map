@@ -12,8 +12,8 @@ svg {
 }
 
 path {
-  fill: var(--dark-land-color);
-  stroke: var(--dark-border-color);
+  fill: var(--land-color);
+  stroke: var(--border-color);
 }
 
 #map {

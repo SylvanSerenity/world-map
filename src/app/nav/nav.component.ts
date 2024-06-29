@@ -1,5 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+
+import jQuery from 'jquery';
+
 import { Country, CountryService } from '../country.service';
+import { ThemeService } from '../theme.service';
 
 @Component({
   selector: 'app-nav',
@@ -16,7 +20,7 @@ export class NavComponent implements OnInit, OnDestroy {
   currentTime: string = '';
   private _interval: any;
 
-  constructor(private _countryService: CountryService) {}
+  constructor(private _countryService: CountryService, private _themeService: ThemeService) {}
 
   ngOnInit() {
     // Update the navbar with new Country info when hovered in the MapComponent
@@ -32,7 +36,11 @@ export class NavComponent implements OnInit, OnDestroy {
       this.currentTime = new Date().toTimeString();
     }, 1000);
 
-    // TODO #theme listener to switch themes
+    // Toggle themes
+    const theme = jQuery('#toggle-theme');
+    theme.on('click', (event) => {
+      this._themeService.toggleTheme();
+    });
   }
 
   ngOnDestroy() {

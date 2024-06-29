@@ -23,8 +23,8 @@ export class MapComponent implements AfterViewInit {
     paths.on('mouseenter', (event) => {
       const target = jQuery(event.currentTarget);
       jQuery(target)
-        .css('fill', 'var(--dark-highlight-color)')
-	.css('stroke', 'var(--dark-border-highlight-color)');
+        .css('fill', 'var(--highlight-color)')
+	.css('stroke', 'var(--border-highlight-color)');
 
       // Move to the end of the SVG to bring the country to the front
       // (Prevents land-locked countries' stroke from being hidden under bordering countries' stroke)
@@ -39,8 +39,8 @@ export class MapComponent implements AfterViewInit {
 
     paths.on('mouseleave', (event) => {
       jQuery(event.currentTarget)
-        .css('fill', 'var(--dark-land-color)')
-	.css('stroke', 'var(--dark-border-color)');
+        .css('fill', 'var(--land-color)')
+	.css('stroke', 'var(--border-color)');
     });
 
     paths.on('click', async (event) => {
