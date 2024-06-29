@@ -21,10 +21,10 @@
 .theme-light {
   --nav-color: #226;
   --ocean-color: #006;
-  --land-color: #261;
-  --border-color: #252;
+  --land-color: #362;
+  --border-color: #352;
   --border-highlight-color: white;
-  --highlight-color: #272;
+  --highlight-color: #372;
 }
 
 * {

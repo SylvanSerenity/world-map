@@ -27,8 +27,8 @@ export class DetailComponent implements OnInit {
     // Update the country details in the details box
     this._countryService.changeCountryDataEvent.subscribe((countryData) => {
       this.countryData = countryData;
-      const latitude = countryData.latitude;
-      const longitude = countryData.longitude;
+      const latitude = Math.abs(countryData.latitude);
+      const longitude = Math.abs(countryData.longitude);
       this.location = `${latitude}°${(countryData.latitude > 0) ? 'N' : 'S'}, ${longitude}°${(countryData.longitude > 0) ? 'E' : 'W'}`
     });
   }
