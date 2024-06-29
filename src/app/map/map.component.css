@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2;
+  z-index: 0;
 }
 
 svg {
@@ -15,11 +15,13 @@ svg {
 path {
   fill: var(--land-color);
   stroke: var(--border-color);
+  cursor: pointer;
 }
 
 #map {
   position: relative;
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
+  cursor: cell;
 }

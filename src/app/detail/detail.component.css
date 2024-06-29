@@ -3,6 +3,7 @@
   z-index: 1;
 
   top: var(--nav-height);
+  margin-top: 1px;
   right: 2px;
   max-width: 20%;
   max-height: 20%;
