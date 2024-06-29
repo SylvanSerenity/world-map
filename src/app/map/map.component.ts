@@ -2,17 +2,19 @@ import { AfterViewInit, Component } from '@angular/core';
 
 import jQuery from 'jquery';
 
+import { ReferencesComponent } from "../references/references.component";
+import { DetailComponent } from "../detail/detail.component";
 import { CountryService } from '../country.service';
 
 export var Country:any;
 export var CountryData:any;
 
 @Component({
-  selector: 'app-map',
-  standalone: true,
-  imports: [],
-  templateUrl: './map.component.html',
-  styleUrl: './map.component.css'
+    selector: 'app-map',
+    standalone: true,
+    templateUrl: './map.component.html',
+    styleUrl: './map.component.css',
+    imports: [ReferencesComponent, DetailComponent]
 })
 export class MapComponent implements AfterViewInit {
   constructor(private _countryService: CountryService) {}
