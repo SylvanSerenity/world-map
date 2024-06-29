@@ -28,6 +28,7 @@ export class CountryService {
   private _cachedCountries: Map<string, CountryData> = new Map();
 
   changeCountryEvent = new EventEmitter<Country>();
+  changeCountryDataEvent = new EventEmitter<CountryData>();
 
   constructor(private _http: HttpClient) {}
 
@@ -37,6 +38,16 @@ export class CountryService {
     const url = `http://api.worldbank.org/V2/country/${countryCode}?format=json`;
     const request = this._http.get<any>(url).pipe(
       map((jsonResponse) => {
+	if (!jsonResponse || !jsonResponse[0] || !jsonResponse[0].total) {
+          return {
+            name: countryCode,
+            capital: 'Unknown',
+            region: 'Unknown',
+            incomeLevel: 'Unknown',
+            latitude: 0.0,
+            longitude: 0.0
+          } as CountryData;
+	}
 	// NOTE: [1] gets the actual content (skips metadata), [0] gets the first result from the query
 	const countryInfo = jsonResponse[1][0];
 	return {
@@ -54,19 +65,22 @@ export class CountryService {
 
   // Accepts a country code as an input parameter that returns additional information gathered from the API for the selected country
   async getCountryData(countryCode: string): Promise<CountryData> {
+    let countryData: CountryData;
     if (!this._cachedCountries.has(countryCode)) {
-      const countryData = await this._requestCountryData(countryCode);
+      countryData = await this._requestCountryData(countryCode);
       this._cachedCountries.set(countryCode, countryData);
-      return countryData;
+    } else {
+      countryData = this._cachedCountries.get(countryCode) ?? {
+        name: 'Unknown',
+        capital: 'Unknown',
+        region: 'Unknown',
+        incomeLevel: 'Unknown',
+        latitude: 0.0,
+        longitude: 0.0
+      }
     }
-    return this._cachedCountries.get(countryCode) ?? {
-      name: 'Unknown',
-      capital: 'Unknown',
-      region: 'Unknown',
-      incomeLevel: 'Unknown',
-      latitude: 0.0,
-      longitude: 0.0
-    };
+    this.changeCountryDataEvent.emit(countryData);
+    return countryData;
   }
   
   set country(country: Country) {

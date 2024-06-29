@@ -49,11 +49,10 @@ export class MapComponent implements AfterViewInit {
 	};
     });
 
-    paths.on('click', async (event) => {
+    paths.on('click', (event) => {
 	const target = jQuery(event.currentTarget);
 	const countryCode = target.attr('id')?.toUpperCase() ?? 'UN';
-	const countryData = await this._countryService.getCountryData(countryCode);
-	console.log(countryData); // TODO Provide to map
+	this._countryService.getCountryData(countryCode);
     });
     // TODO Allow zoom
   }
