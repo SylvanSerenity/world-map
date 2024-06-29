@@ -35,7 +35,7 @@ export class CountryService {
   // Trigger the API call when a country is selected and set a local variable that will receive the information about the country
   private async _requestCountryData(countryCode: string): Promise<CountryData> {
     // Send the request
-    const url = `http://api.worldbank.org/V2/country/${countryCode}?format=json`;
+    const url = `https://api.worldbank.org/V2/country/${countryCode}?format=json`;
     const request = this._http.get<any>(url).pipe(
       map((jsonResponse) => {
 	if (!jsonResponse || !jsonResponse[0] || !jsonResponse[0].total) {
