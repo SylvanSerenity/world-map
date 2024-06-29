@@ -1,0 +1,42 @@
+:host {
+  width: 100%;
+  height: 100%;
+}
+
+.img-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  place-items: center;
+  z-index: 0;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.message-container {
+  position: absolute;
+  width: 20%;
+  min-height: calc(20%);
+  max-height: calc(60%);
+  margin: 10%;
+  z-index: 1;
+  overflow: auto;
+
+  background-color: #bbb7;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px 0 #000d;
+}
+
+.message-container * {
+  padding: 10px;
+}
+
+.message-container a {
+  padding: 0;
+  text-decoration: none;
+}
