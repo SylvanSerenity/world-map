@@ -31,6 +31,8 @@ export class NavComponent implements OnInit, OnDestroy {
     this._interval = setInterval(() => {
       this.currentTime = new Date().toTimeString();
     }, 1000);
+
+    // TODO #theme listener to switch themes
   }
 
   ngOnDestroy() {
