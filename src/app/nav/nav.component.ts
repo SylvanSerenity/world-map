@@ -14,8 +14,8 @@ import { ThemeService } from '../theme.service';
 })
 export class NavComponent implements OnInit, OnDestroy {
   country: Country = {
-    code: 'UN',
-    name: 'Unknown'
+    code: '',
+    name: 'No Selection'
   };
   currentTime: string = '';
   private _interval: any;

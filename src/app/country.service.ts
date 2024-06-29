@@ -22,16 +22,8 @@ export interface CountryData {
 })
 export class CountryService {
   private _country: Country = {
-    code: 'UN',
-    name: 'Unknown'
-  };
-  private _defaultCountryData = {
-    name: 'Unknown',
-    capital: 'Unknown',
-    region: 'Unknown',
-    incomeLevel: 'Unknown',
-    latitude: 0.0,
-    longitude: 0.0
+    code: '',
+    name: 'No Selection'
   };
   private _cachedCountries: Map<string, CountryData> = new Map();
 
@@ -67,7 +59,14 @@ export class CountryService {
       this._cachedCountries.set(countryCode, countryData);
       return countryData;
     }
-    return this._cachedCountries.get(countryCode) ?? this._defaultCountryData;
+    return this._cachedCountries.get(countryCode) ?? {
+      name: 'Unknown',
+      capital: 'Unknown',
+      region: 'Unknown',
+      incomeLevel: 'Unknown',
+      latitude: 0.0,
+      longitude: 0.0
+    };
   }
   
   set country(country: Country) {

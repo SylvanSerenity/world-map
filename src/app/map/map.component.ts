@@ -41,6 +41,12 @@ export class MapComponent implements AfterViewInit {
       jQuery(event.currentTarget)
         .css('fill', 'var(--land-color)')
 	.css('stroke', 'var(--border-color)');
+
+	// Set new country data
+	this._countryService.country = {
+	  code: '',
+	  name: 'No Selection'
+	};
     });
 
     paths.on('click', async (event) => {
@@ -49,5 +55,6 @@ export class MapComponent implements AfterViewInit {
 	const countryData = await this._countryService.getCountryData(countryCode);
 	console.log(countryData); // TODO Provide to map
     });
+    // TODO Allow zoom
   }
 }
