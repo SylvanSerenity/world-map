@@ -1,0 +1,39 @@
+:host {
+  position: fixed;
+  z-index: 1;
+
+  top: var(--nav-height);
+  max-width: 200px;
+  max-height: 20%;
+}
+
+.references-container {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+  background-color: #0003;
+  box-shadow: -2px 2px 5px 0 #0009;
+  border: 1px solid white;
+  color: white;
+}
+
+.references-container h1 {
+  font-size: 18px;
+  padding: 5px;
+  text-align: center;
+}
+
+.references-container ol {
+  font-size: 13px;
+  margin-left: 25px;
+  padding: 5px;
+}
+
+.references-container li {
+  padding: 2px;
+}
+
+.references-container ol a {
+  color: white;
+}

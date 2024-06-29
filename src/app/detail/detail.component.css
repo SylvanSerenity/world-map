@@ -22,11 +22,5 @@
 .details-container ul {
   list-style: none;
   padding: 5px;
-  margin: 0;
-  font-size: 13px;
-}
-
-.details-container li {
-  padding: 0;
-  margin: 0;
+  font-size: 15px;
 }
